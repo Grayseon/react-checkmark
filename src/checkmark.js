@@ -17,12 +17,12 @@ const PREDEFINED_SIZE_MAP = {
   xxLarge: '96px',
 };
 
-export function Checkmark({ size, color }) {
+export function Checkmark({ size, color="#7ac142", checkmarkFill="#fff" }) {
   const computedSize = PREDEFINED_SIZE_MAP[size] || size;
   const style = { width: computedSize, height: computedSize };
-  if (color) {
-    style['--checkmark-fill-color'] = color;
-  }
+  style['--checkmark-fill-color'] = color;
+  style['--checkmark-check-color'] = checkmarkFill
+
 
   return (
     <svg
